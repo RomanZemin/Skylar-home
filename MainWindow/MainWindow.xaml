@@ -1,0 +1,129 @@
+﻿<Window x:Class="Skylar_home.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Skylar_home"
+        mc:Ignorable="d"
+        Title="MainWindow" Width="1245" Height="700" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Grid Background="#282C34">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="33*"/>
+            <RowDefinition Height="317*"/>
+        </Grid.RowDefinitions>
+        <Grid x:Name="panelHeader" VerticalAlignment="Top" Height="50" Background="#21252B" MouseDown="panelHeader_MouseDown">
+            <TextBlock Text="Skylar control" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Century Gothic" FontWeight="Bold" FontSize="24" Foreground="White"></TextBlock>
+            <Image Source="Media/Icons/Control Buttons/close.png" HorizontalAlignment="Right" Height ="20" Margin="0 0 10 0" MouseDown="Image_MouseDown"></Image>
+            <Image Source="Media/Icons/Control Buttons/maximize.png" HorizontalAlignment="Right" Height ="20" Margin="0 0 40 0" MouseDown="Image_MouseDown_1"></Image>
+            <Image Source="Media/Icons/Control Buttons/minimize.png" HorizontalAlignment="Right" Height ="20" Margin="0 0 70 0" MouseDown="Image_MouseDown_2"></Image>
+        </Grid>
+        <Grid x:Name ="sidePanel" HorizontalAlignment="Left" Width="240" Background="#21252B" Grid.RowSpan="2">
+            <StackPanel>
+                <Grid Height="50" Background="#21252B" MouseDown="panelHeader_MouseDown">
+                    <Image Source="Media/Logo.png" Height ="50" VerticalAlignment="Center" HorizontalAlignment="Left"></Image>
+                    <TextBlock Text="Your Smart Home" Margin="55 0 0 0" Foreground="#9093DC" VerticalAlignment="Center"  FontFamily="Century Gothic" FontSize="20" FontWeight="Bold" ></TextBlock>
+                </Grid>
+                <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" FontFamily="Century Gothic" FontSize="25" Foreground="#DDDDDD" FontWeight="Bold" BorderBrush="Transparent" Background="Transparent" SelectionChanged="ListView_SelectionChanged">
+                    <ListViewItem Height="50" Name="HideMenuItem">
+                        <StackPanel Orientation="Horizontal" Width="240">
+                            <Image Source="Media/Icons/Menu/Back.png" Height ="35" Margin="5 0 0 0" VerticalAlignment="Center"></Image>
+                            <TextBlock Margin="50 0 0 0" Text="Hide" Foreground="#FF8899A4" VerticalAlignment="Center"></TextBlock>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="50" Name="OverviewMenuItem">
+                        <StackPanel Orientation="Horizontal" Width="240">
+                            <Image Source="Media/Icons/Menu/Overview.png" Height ="35" Margin="5 0 0 0" VerticalAlignment="Center"></Image>
+                            <TextBlock Margin="50 0 0 0" Text="Overview" VerticalAlignment="Center"></TextBlock>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="50" Name="AssistantMenuItem">
+                        <StackPanel Orientation="Horizontal" Width="240">
+                            <Image Source="Media/Icons/Menu/Assistant.png" Height ="35" Margin="5 0 0 0" VerticalAlignment="Center"></Image>
+                            <TextBlock Margin="50 0 0 0" Text="Assistant" VerticalAlignment="Center"></TextBlock>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="50" Name="DevicesMenuItem">
+                        <StackPanel Orientation="Horizontal" Width="240">
+                            <Image Source="Media/Icons/Menu/Devices.png" Height ="35" Margin="5 0 0 0" VerticalAlignment="Center"></Image>
+                            <TextBlock Margin="50 0 0 0" Text="Devices" VerticalAlignment="Center"></TextBlock>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="50" Name="AnalyticsMenuItem">
+                        <StackPanel Orientation="Horizontal" Width="240">
+                            <Image Source="Media/Icons/Menu/Analytics.png" Height ="35" Margin="5 0 0 0" VerticalAlignment="Center"></Image>
+                            <TextBlock Margin="50 0 0 0" Text="Analytics" VerticalAlignment="Center"></TextBlock>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="50" Name="RulesMenuItem">
+                        <StackPanel Orientation="Horizontal" Width="240">
+                            <Image Source="Media/Icons/Menu/Rules.png" Height ="35" Margin="5 0 0 0" VerticalAlignment="Center"></Image>
+                            <TextBlock Margin="50 0 0 0" Text="Rules" VerticalAlignment="Center"></TextBlock>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="50" Name="GalleryMenuItem">
+                        <StackPanel Orientation="Horizontal" Width="240">
+                            <Image Source="Media/Icons/Menu/Gallery.png" Height ="35" Margin="5 0 0 0" VerticalAlignment="Center"></Image>
+                            <TextBlock Margin="50 0 0 0" Text="Gallery" VerticalAlignment="Center"></TextBlock>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="50" Name="HistoryMenuItem">
+                        <StackPanel Orientation="Horizontal" Width="240">
+                            <Image Source="Media/Icons/Menu/History.png" Height ="35" Margin="5 0 0 0" VerticalAlignment="Center"></Image>
+                            <TextBlock Margin="50 0 0 0" Text="History" VerticalAlignment="Center"></TextBlock>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="50" Name="SettingsMenuItem">
+                        <StackPanel Orientation="Horizontal" Width="240">
+                            <Image Source="Media/Icons/Menu/Settings.png" Height ="35" Margin="5 0 0 0" VerticalAlignment="Center"></Image>
+                            <TextBlock Margin="50 0 0 0" Text="Settings" VerticalAlignment="Center"></TextBlock>
+                        </StackPanel>
+                    </ListViewItem>
+                </ListView>
+            </StackPanel>
+        </Grid>
+        <Grid x:Name ="mainPanel" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="1000" Height="650" Background="#21252B" Grid.RowSpan="2">
+            <TabControl x:Name="MyTabControl" Background="#21252B" FontFamily="Century Gothic" FontSize="25" Foreground="#DDDDDD" FontWeight="Bold">
+                <TabItem x:Name="OverviewTabItem" Visibility="Collapsed">
+                    <Grid>
+                        <TextBlock Text="Content of Tab 1" />
+                    </Grid>
+                </TabItem>
+                <TabItem x:Name="AssistantTabItem" Visibility="Collapsed">
+                    <Grid>
+                        <TextBlock Text="Content of Tab 2" />
+                    </Grid>
+                </TabItem>
+                <TabItem x:Name="DevicesTabItem" Visibility="Collapsed">
+                    <Grid>
+                        <TextBlock Text="Content of Tab 3" />
+                    </Grid>
+                </TabItem>
+                <TabItem x:Name="AnalyticsTabItem" Visibility="Collapsed">
+                    <Grid>
+                        <TextBlock Text="Content of Tab 4" />
+                    </Grid>
+                </TabItem>
+                <TabItem x:Name="RulesTabItem" Visibility="Collapsed">
+                    <Grid>
+                        <TextBlock Text="Content of Tab 5" />
+                    </Grid>
+                </TabItem>
+                <TabItem x:Name="GalleryTabItem" Visibility="Collapsed">
+                    <Grid>
+                        <TextBlock Text="Content of Tab 6" />
+                    </Grid>
+                </TabItem>
+                <TabItem x:Name="HistoryTabItem" Visibility="Collapsed">
+                    <Grid>
+                        <TextBlock Text="Content of Tab 7" />
+                    </Grid>
+                </TabItem>
+                <TabItem x:Name="SettingsTabItem" Visibility="Collapsed">
+                    <Grid>
+                        <TextBlock Text="Content of Tab 8" />
+                    </Grid>
+                </TabItem>
+            </TabControl>
+        </Grid>
+    </Grid>
+</Window>
