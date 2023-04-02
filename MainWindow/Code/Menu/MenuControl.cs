@@ -3,11 +3,16 @@ using System.Windows.Input;
 using System.Windows.Media.Animation;
 using System.Windows;
 using System;
+using System.Windows.Media;
 
 namespace Skylar_home
 {
     public partial class MainWindow : Window
     {
+        private bool night_theme = false;
+        private bool hidden = false;
+        private ResourceDictionary currentTheme;
+
         private void panelHeader_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed)

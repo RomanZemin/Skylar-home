@@ -121,5 +121,8 @@
     <Resource Include="MainWindow\Media\Icons\Menu\Rules.png" />
     <Resource Include="MainWindow\Media\Icons\Menu\Settings.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="MainWindow\Media\Icons\Control Buttons\Theme_Switch.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

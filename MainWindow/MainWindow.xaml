@@ -6,28 +6,36 @@
         xmlns:local="clr-namespace:Skylar_home"
         mc:Ignorable="d"
         Title="MainWindow" Width="1245" Height="700" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
-    <Grid Background="#282C34">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="{StaticResource Theme_Text_Menu}"></Setter>
+        </Style>
+        <Style TargetType="Grid">
+            <Setter Property="Background" Value="{StaticResource Theme_Grid}"></Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="33*"/>
             <RowDefinition Height="317*"/>
         </Grid.RowDefinitions>
-        <Grid x:Name="panelHeader" VerticalAlignment="Top" Height="50" Background="#21252B" MouseDown="panelHeader_MouseDown">
-            <TextBlock Text="Skylar control" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Century Gothic" FontWeight="Bold" FontSize="24" Foreground="White"></TextBlock>
+        <Grid x:Name="panelHeader" VerticalAlignment="Top" Height="50" MouseDown="panelHeader_MouseDown">
+            <TextBlock Text="Skylar control" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Century Gothic" FontWeight="Bold" FontSize="24" Foreground="{StaticResource Theme_Text_Menu_Title}"></TextBlock>
             <Image Source="Media/Icons/Control Buttons/close.png" HorizontalAlignment="Right" Height ="20" Margin="0 0 10 0" MouseDown="Image_MouseDown"></Image>
             <Image Source="Media/Icons/Control Buttons/maximize.png" HorizontalAlignment="Right" Height ="20" Margin="0 0 40 0" MouseDown="Image_MouseDown_1"></Image>
             <Image Source="Media/Icons/Control Buttons/minimize.png" HorizontalAlignment="Right" Height ="20" Margin="0 0 70 0" MouseDown="Image_MouseDown_2"></Image>
         </Grid>
-        <Grid x:Name ="sidePanel" HorizontalAlignment="Left" Width="240" Background="#21252B" Grid.RowSpan="2">
+        <Grid x:Name ="sidePanel" HorizontalAlignment="Left" Width="240" Grid.RowSpan="2">
             <StackPanel>
-                <Grid Height="50" Background="#21252B" MouseDown="panelHeader_MouseDown">
+                <Grid Height="50" MouseDown="panelHeader_MouseDown">
                     <Image Source="Media/Logo.png" Height ="50" VerticalAlignment="Center" HorizontalAlignment="Left"></Image>
-                    <TextBlock Text="Your Smart Home" Margin="55 0 0 0" Foreground="#9093DC" VerticalAlignment="Center"  FontFamily="Century Gothic" FontSize="20" FontWeight="Bold" ></TextBlock>
+                    <TextBlock Text="Your Smart Home" Margin="55 0 0 0" Foreground="{StaticResource Theme_Text_Menu_Logo}" VerticalAlignment="Center"  FontFamily="Century Gothic" FontSize="20" FontWeight="Bold" ></TextBlock>
                 </Grid>
                 <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" FontFamily="Century Gothic" FontSize="25" Foreground="#DDDDDD" FontWeight="Bold" BorderBrush="Transparent" Background="Transparent" SelectionChanged="ListView_SelectionChanged">
                     <ListViewItem Height="50" Name="HideMenuItem">
                         <StackPanel Orientation="Horizontal" Width="240">
                             <Image Source="Media/Icons/Menu/Back.png" Height ="35" Margin="5 0 0 0" VerticalAlignment="Center"></Image>
-                            <TextBlock Margin="50 0 0 0" Text="Hide" Foreground="#FF8899A4" VerticalAlignment="Center"></TextBlock>
+                            <TextBlock Margin="50 0 0 0" Text="Hide" Foreground="{StaticResource Theme_Text_Menu_Hide}" VerticalAlignment="Center"></TextBlock>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="50" Name="OverviewMenuItem">
@@ -81,8 +89,12 @@
                 </ListView>
             </StackPanel>
         </Grid>
-        <Grid x:Name ="mainPanel" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="1000" Height="650" Background="#21252B" Grid.RowSpan="2">
-            <TabControl x:Name="MyTabControl" Background="#21252B" FontFamily="Century Gothic" FontSize="25" Foreground="#DDDDDD" FontWeight="Bold">
+        <Grid x:Name ="mainPanel" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="1000" Height="650" Grid.RowSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="223*"/>
+                <ColumnDefinition Width="27*"/>
+            </Grid.ColumnDefinitions>
+            <TabControl x:Name="MyTabControl" Background="{StaticResource Theme_TabControl}" FontFamily="Century Gothic" FontSize="25" Foreground="{StaticResource Theme_Text_Menu_Tab}" FontWeight="Bold" Grid.ColumnSpan="2">
                 <TabItem x:Name="OverviewTabItem" Visibility="Collapsed">
                     <Grid>
                         <TextBlock Text="Content of Tab 1" />

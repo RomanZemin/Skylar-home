@@ -24,13 +24,12 @@ namespace Skylar_home
     {
         double sidepanelWidth;
         double mainpanelWidth;
-        bool hidden;
         public MainWindow()
         {
             InitializeComponent();
             sidepanelWidth = sidePanel.Width;
             mainpanelWidth = mainPanel.Width;
         }
-       
+
     }
 }

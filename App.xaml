@@ -4,6 +4,12 @@
              xmlns:local="clr-namespace:Skylar_home"
              StartupUri="MainWindow/MainWindow.xaml">
     <Application.Resources>
-         
+        <SolidColorBrush x:Key="Theme_Grid" Color="#21252B"/>
+        <SolidColorBrush x:Key="Theme_Text_Menu" Color="#DDDDDD"/>
+        <SolidColorBrush x:Key="Theme_Text_Menu_Hide" Color="#FF8899A4"/>
+        <SolidColorBrush x:Key="Theme_Text_Menu_Logo" Color="#9093DC"/>
+        <SolidColorBrush x:Key="Theme_Text_Menu_Title" Color="White"/>
+        <SolidColorBrush x:Key="Theme_Text_Menu_Tab" Color="#DDDDDD"/>
+        <SolidColorBrush x:Key="Theme_TabControl" Color="#21252B"/>
     </Application.Resources>
 </Application>
